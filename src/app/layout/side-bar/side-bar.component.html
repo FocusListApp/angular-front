@@ -1,0 +1,75 @@
+<div>
+    <header class="bg-white shadow-md rose:bg-rose-400 blue:bg-blue-400 dark:bg-slate-800 dark:text-white h-12 transition-colors duration-500 ease-in-out">
+        <app-sidebar-header></app-sidebar-header>
+    </header>
+    <div class="grid grid-cols-12 h-screen">
+        <div class="col-span-3 bg-gray-50 rose:bg-rose-50 blue:bg-blue-100 dark:bg-slate-700 transition-colors duration-500 ease-in-out">
+            <div class="p-10 flex flex-col">
+                <div class="my-2"><span class="font-semibold text-xs rose:text-rose-600 blue:text-blue-800 dark:text-white">MENU</span></div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="flex items-center gap-6 hover:bg-black hover:bg-opacity-5 p-2 rounded-sm transition-colors duration-400 ease-in-out">
+                                <div class="text-blue-600 dark:text-blue-400 flex items-center">
+                                    <ng-icon name="heroInbox" [size]="'24px'" />
+                                </div>
+                                <span class="font-semibold dark:text-white">All</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="flex justify-between items-center hover:bg-black hover:bg-opacity-5 p-2 rounded-sm transition-colors duration-500 ease-in-out">
+                                
+                                <div class="flex gap-6 items-center">
+                                    <div class="text-yellow-500 dark:text-yellow-300 flex items-center">
+                                        <ng-icon name="heroStarSolid" [size]="'24px'" />
+                                    </div>                             
+                                    <span class="font-semibold dark:text-white">Today</span>
+                                </div>
+                                <div class="rounded-full p-1 text-xs font-semibold text-white w-6 h-6 flex items-center justify-center bg-red-500 rose:bg-rose-600 opacity-50 dark:bg-slate-600 dark:opacity-80 blue:bg-blue-500">1</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="flex items-center gap-6 hover:bg-black hover:bg-opacity-5 p-2 rounded-sm transition-colors duration-400 ease-in-out">
+                                <div class="text-purple-600 dark:text-purple-400 flex items-center">
+                                    <ng-icon name="heroCalendarDays" [size]="'24px'" />
+                                </div>                              
+                                <span class="font-semibold dark:text-white">Upcoming</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="flex items-center gap-6 hover:bg-black hover:bg-opacity-5 p-2 rounded-sm transition-colors duration-500 ease-in-out">
+                                <div class="text-yellow-800 dark:text-orange-400 flex items-center">
+                                    <ng-icon name="heroArchiveBox" [size]="'24px'" />
+                                </div>                              
+                                <span class="font-semibold dark:text-white">Archived</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="my-2"><span class="font-semibold text-xs rose:text-rose-600 blue:text-blue-800 dark:text-white">TAGS</span></div>
+
+                <ul>
+                    <li *ngFor="let tag of tags">
+                        <a href="">
+                            <div class="flex items-center gap-6 hover:bg-black hover:bg-opacity-5 p-2 rounded-sm transition-colors duration-400 ease-in-out">
+                                <div [ngClass]="getTagColorClass(tag.color)">
+                                    <ng-icon name="heroHashtag" [size]="'24px'" />
+                                </div>
+                                <span class="font-semibold dark:text-white">{{tag.title}}</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-span-9 p-4 dark:bg-slate-600 transition-colors duration-500 ease-in-out">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

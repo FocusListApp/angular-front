@@ -1,0 +1,19 @@
+<div class="relative">
+    <div
+      class="flex select-none items-center rose:text-white dark:text-white blue:text-white cursor-pointer p-2 rounded-md hover:bg-black hover:dark:bg-white hover:dark:bg-opacity-5 hover:bg-opacity-5"
+      (click)="toggleMenu()"
+    >
+      <ng-icon name="heroBell" size="24px"></ng-icon>
+    </div>
+    <div
+      *ngIf="isMenuOpen"
+      class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md"
+    >
+      <ul class="p-2">
+        <li class="hover:bg-gray-200 dark:hover:bg-gray-700 p-2 cursor-pointer">Opción 1</li>
+        <li class="hover:bg-gray-200 dark:hover:bg-gray-700 p-2 cursor-pointer">Opción 2</li>
+        <li class="hover:bg-gray-200 dark:hover:bg-gray-700 p-2 cursor-pointer">Opción 3</li>
+      </ul>
+    </div>
+  </div>
+  

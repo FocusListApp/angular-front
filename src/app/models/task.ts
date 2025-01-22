@@ -1,8 +1,8 @@
+import { from, Observable } from "rxjs";
 import { TaskService } from "../services/task.service";
+import { BackendOption } from "../types/settings.type";
 
 export class Task {
-    static service: TaskService;
-
     constructor(
         public id: number,
         public title: string,
@@ -29,5 +29,5 @@ export class Task {
           updatedAt: this.updatedAt,
           completedAt: this.completedAt
         };
-      }
+    }
 }
