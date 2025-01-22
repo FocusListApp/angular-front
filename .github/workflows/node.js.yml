@@ -38,5 +38,11 @@ jobs:
       - name: Run tests
         run: npm run test:ci
       # {6}
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+      # {7}
       - name: Build
         run: npm run build
+      # {8}
+      - name: Deploy
+        run: ng deploy --base-href=/angular-front/
